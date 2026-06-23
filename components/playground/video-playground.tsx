@@ -434,7 +434,7 @@ export function VideoPlayground() {
                   <p className="mt-1 text-xs text-muted-foreground">{tp.breakdown.numbersHint}</p>
                 </div>
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                  <div className="grid shrink-0 grid-cols-8 gap-1" style= width: 8 * 28 >
+                  <div className="grid w-[280px] max-w-full shrink-0 grid-cols-8 gap-1">
                     {Array.from({ length: 64 }).map((_, i) => {
                       const r = currentFrame.sample[i * 3] ?? 0
                       const g = currentFrame.sample[i * 3 + 1] ?? 0
