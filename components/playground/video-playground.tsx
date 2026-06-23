@@ -55,7 +55,7 @@ function Stat({ label, value }: { label: string; value: string }) {
         <div className="text-xs uppercase tracking-wide text-muted-foreground">
           {label}
         </div>
-        <div className="mt-1 text-lg font-semibold">{value}</div>
+        <div className="mt-1 text-base font-semibold sm:text-lg">{value}</div>
       </CardContent>
     </Card>
   )
@@ -72,15 +72,15 @@ function Stage({
 }) {
   return (
     <Card>
-      <CardContent className="flex flex-col items-center gap-2 p-5 text-center">
-        <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+      <CardContent className="flex flex-col items-center gap-2 p-4 text-center sm:p-5">
+        <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground sm:h-11 sm:w-11">
           <Icon className="h-5 w-5" />
         </span>
         <span className="text-xs uppercase tracking-wide text-muted-foreground">
           {label}
         </span>
         {value ? (
-          <span className="font-mono text-base font-semibold">{value}</span>
+          <span className="font-mono text-sm font-semibold sm:text-base">{value}</span>
         ) : null}
       </CardContent>
     </Card>
@@ -255,10 +255,10 @@ export function VideoPlayground() {
   }
 
   return (
-    <div className="container space-y-16 py-16">
+    <div className="container space-y-12 py-10 md:space-y-16 md:py-16">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">{tp.title}</h1>
-        <p className="mt-3 text-muted-foreground">{tp.subtitle}</p>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">{tp.title}</h1>
+        <p className="mt-3 text-sm text-muted-foreground sm:text-base">{tp.subtitle}</p>
       </div>
 
       {!frames || !meta || !currentFrame ? (
@@ -271,7 +271,7 @@ export function VideoPlayground() {
             onDragLeave={() => setDragging(false)}
             onDrop={onDrop}
             className={cn(
-              "flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed p-12 text-center transition-colors",
+              "flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed p-8 text-center transition-colors sm:p-12",
               dragging ? "border-primary bg-primary/5" : "border-border",
             )}
           >
@@ -323,7 +323,7 @@ export function VideoPlayground() {
           ) : null}
         </div>
       ) : (
-        <div className="space-y-16">
+        <div className="space-y-12 md:space-y-16">
           <div className="flex flex-wrap items-center justify-center gap-2">
             <Button variant="outline" size="sm" onClick={copyStats}>
               <Copy className="h-4 w-4" />
@@ -362,7 +362,7 @@ export function VideoPlayground() {
             <Card className="mx-auto max-w-3xl overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={currentFrame.dataUrl} alt="" className="w-full bg-black object-contain" />
-              <CardContent className="space-y-4 p-6">
+              <CardContent className="space-y-4 p-4 sm:p-6">
                 <div className="flex items-center justify-between text-sm">
                   <span className="font-mono">
                     {tp.explorer.frame} {realFrameNumber} / {formatNumber(meta.frameCount, locale)}
@@ -428,13 +428,13 @@ export function VideoPlayground() {
               {tp.breakdown.caption}
             </p>
             <Card className="mx-auto max-w-3xl">
-              <CardContent className="space-y-4 p-6">
+              <CardContent className="space-y-4 p-4 sm:p-6">
                 <div>
                   <h3 className="text-sm font-semibold">{tp.breakdown.numbersTitle}</h3>
                   <p className="mt-1 text-xs text-muted-foreground">{tp.breakdown.numbersHint}</p>
                 </div>
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                  <div className="grid w-[280px] max-w-full shrink-0 grid-cols-8 gap-1">
+                  <div className="grid w-full max-w-[280px] shrink-0 grid-cols-8 gap-1 sm:w-[240px]">
                     {Array.from({ length: 64 }).map((_, i) => {
                       const r = currentFrame.sample[i * 3] ?? 0
                       const g = currentFrame.sample[i * 3 + 1] ?? 0
@@ -473,9 +473,9 @@ export function VideoPlayground() {
             </Card>
           </section>
 
-          <section className="space-y-5 rounded-2xl border bg-muted/20 p-8">
+          <section className="space-y-5 rounded-2xl border bg-muted/20 p-6 md:p-8">
             <SectionTitle>{tp.viz.heading}</SectionTitle>
-            <div className="grid items-stretch gap-3 sm:grid-cols-4">
+            <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-4">
               <Stage icon={Film} label={tp.viz.video} value="1" />
               <Stage icon={Layers} label={tp.viz.frames} value={formatNumber(meta.frameCount, locale)} />
               <Stage icon={ImageIcon} label={tp.viz.pixelValues} value={compactNumber(totalPixelValues, locale)} />
@@ -534,7 +534,7 @@ export function VideoPlayground() {
             </div>
           </section>
 
-          <section className="space-y-5 rounded-2xl border p-8">
+          <section className="space-y-5 rounded-2xl border p-6 md:p-8">
             <div className="flex flex-col items-center gap-3 text-center">
               <SectionTitle>{tp.cv.heading}</SectionTitle>
               <p className="max-w-xl text-sm text-muted-foreground">{tp.cv.subtitle}</p>
@@ -548,7 +548,7 @@ export function VideoPlayground() {
               </Button>
             </div>
             {cv ? (
-              <div className="grid items-stretch gap-3 sm:grid-cols-5">
+              <div className="grid grid-cols-2 items-stretch gap-3 sm:grid-cols-5">
                 <Stage icon={Film} label={tp.cv.video} />
                 <Stage icon={Layers} label={tp.cv.frames} />
                 <Stage icon={ImageIcon} label={tp.cv.objects} />
