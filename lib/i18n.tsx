@@ -120,7 +120,7 @@ const en = {
     cv: {
       heading: "How AI Sees This Video",
       subtitle:
-        "Computer vision models never see motion. They process frames as numbers, then look for patterns.",
+        "\u201cComputer vision\u201d is how a computer looks at images. It never sees motion \u2014 it reads each frame as a grid of numbers, then hunts for patterns to recognize objects and guess what happens next.",
       toggle: "Computer Vision Mode",
       video: "Video",
       frames: "Frames",
@@ -276,7 +276,7 @@ const id: Dict = {
     cv: {
       heading: "Bagaimana AI Melihat Video Ini",
       subtitle:
-        "Model computer vision tidak pernah melihat gerakan. Mereka memproses frame sebagai angka, lalu mencari pola.",
+        "\u201cComputer vision\u201d adalah cara komputer melihat gambar. Ia tak pernah melihat gerakan \u2014 tiap frame dibaca sebagai kisi angka, lalu polanya dicari untuk mengenali objek dan menebak apa yang terjadi berikutnya.",
       toggle: "Mode Computer Vision",
       video: "Video",
       frames: "Frame",
