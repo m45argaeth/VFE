@@ -41,6 +41,11 @@ export function SiteFooter() {
                   {ui.portfolio}
                 </a>
               </li>
+              <li>
+                <a href={`${PORTFOLIO.url}/roadmap`} target="_blank" rel="noreferrer" className="hover:text-foreground">
+                  Roadmap
+                </a>
+              </li>
             </ul>
           </div>
 
