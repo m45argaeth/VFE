@@ -2,7 +2,7 @@ import { Film } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
 
-export type SiteId = "ebn" | "te" | "ttb" | "vfe"
+export type SiteId = "ebn" | "te" | "ttb" | "vfe" | "bd"
 
 export interface SeriesItem {
   id: SiteId
@@ -31,6 +31,11 @@ export const SERIES: SeriesItem[] = [
     id: "vfe",
     name: "Video Frame Explorer",
     url: "https://vfe-playground.vercel.app",
+  },
+  {
+    id: "bd",
+    name: "Bias Detector",
+    url: "https://bd-playground-snowy.vercel.app",
   },
 ]
 
