@@ -12,31 +12,61 @@ export interface SeriesItem {
 
 /** The educational SaaS in the same series. Shared across every site. */
 export const SERIES: SeriesItem[] = [
-  {
-    id: "ebn",
-    name: "Everything Becomes Numbers",
-    url: "https://ebn-playground.vercel.app",
-  },
-  {
-    id: "te",
-    name: "Token Explorer",
-    url: "https://te-playground.vercel.app",
-  },
-  {
-    id: "ttb",
-    name: "Text To Binary",
-    url: "https://ttb-playground.vercel.app",
-  },
-  {
-    id: "vfe",
-    name: "Video Frame Explorer",
-    url: "https://vfe-playground.vercel.app",
-  },
-  {
-    id: "bd",
-    name: "Bias Detector",
-    url: "https://bd-playground-snowy.vercel.app",
-  },
+	{
+		id: "ebn",
+		name: "Everything Becomes Numbers",
+		url: "https://ebn-playground.vercel.app",
+	},
+	{
+		id: "te",
+		name: "Token Explorer",
+		url: "https://te-playground.vercel.app",
+	},
+	{
+		id: "ttb",
+		name: "Text To Binary",
+		url: "https://ttb-playground.vercel.app",
+	},
+	{
+		id: "vfe",
+		name: "Video Frame Explorer",
+		url: "https://vfe-playground.vercel.app",
+	},
+	{
+		id: "ee",
+		name: "Embedding Explorer",
+		url: "https://ee-playground.vercel.app",
+	},
+	{
+		id: "pe",
+		name: "Prompt Explorer",
+		url: "https://pe-playground-snowy.vercel.app",
+	},
+	{
+		id: "he",
+		name: "Hallucination Explorer",
+		url: "https://he-playground.vercel.app",
+	},
+	{
+		id: "ce",
+		name: "Compression Explorer",
+		url: "https://ce-playground.vercel.app",
+	},
+	{
+		id: "ipe",
+		name: "Internet Packet Explorer",
+		url: "https://ipe-playground.vercel.app",
+	},
+	{
+		id: "hvsai",
+		name: "Human vs AI Explorer",
+		url: "https://hvsai-playground.vercel.app",
+	},
+	{
+		id: "bd",
+		name: "Bias Detector",
+		url: "https://bd-playground-snowy.vercel.app",
+	}
 ]
 
 export type Universe = "ebn" | "mind"
